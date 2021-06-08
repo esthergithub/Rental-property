@@ -1,0 +1,15 @@
+<h3>Send with the following contents.</h3>
+<%= form_with(model: @property, url: properties_path, local: true) do |form| %>
+  <%= form.hidden_field :name %>
+  <%= form.hidden_field :rent %>
+  <%= form.hidden_field :address %>
+  <%= form.hidden_field :year %>
+  <%= form.hidden_field :memo %>
+  <p>タイトル:<%= @property.name %></p>
+  <p>本文:<%= @property.rent %></p>
+  <p>本文:<%= @property.address %></p>
+  <p>本文:<%= @property.year %></p>
+  <p>本文:<%= @property.memo %></p>
+  <%= form.submit  "confirm" %>
+  <%= form.submit "back", name: 'back' %>
+<% end %>

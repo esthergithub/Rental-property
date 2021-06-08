@@ -1,0 +1,40 @@
+<%= form_with(model: @property, local: true ,url: choose_new_or_edit ) do |form| %>
+<% if @property.errors.any? %>
+　<div id="error_explanation">
+　　<h2><%= @property.errors.count %>There are some errors.</h2>
+　　<ul>
+　　<% @property.errors.full_messages.each do |msg| %>
+　　　<li><%= msg %></li>
+　　<% end %>
+　　</ul>
+　</div>
+<% end %>
+
+  <div class="property_form">
+    <%= form.label :name %><br>
+    <%= form.text_field :name %><br>
+    <%= form.label :rent %><br>
+    <%= form.text_field :rent %><br>
+    <%= form.label :address %><br>
+    <%= form.text_field :address %><br>
+    <%= form.label :year %><br>
+    <%= form.text_field :year %><br>
+    <%= form.label :remarks %><br>
+    <%= form.text_area :memo %><br>
+  </div>
+
+  <div class="station_form">
+    <% n = 0 %>
+    <%= form.fields_for :nearest_stations do |near| %>
+      <h2>Nearest Station<%= n += 1 %></h2>
+      <%= near.label :Route %><br>
+      <%= near.text_field :route %><br>
+      <%= near.label :Station %><br>
+      <%= near.text_field :station %><br>
+      <%= near.label :Time %><br>
+      <%= near.text_field :time %><br>
+    <% end %>
+  </div>
+　<%= form.submit %>
+<% end %>
+<%= link_to "Back", properties_path %>

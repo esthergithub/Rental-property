@@ -1,0 +1,25 @@
+<h1>Property details </h1>
+<p>Name: <%= @property.name %></p>
+<p>Rent: <%= @property.rent %></p>
+<p>Adress: <%= @property.address %></p>
+<p>Year: <%= @property.year %></p>
+<p>Remarks: <%= @property.memo %></p>
+
+<div class="station_form">
+  <% n = 0 %>
+  <% @property.nearest_stations.each do |nearest_station| %>
+    <h2>Nearest Station<%= n += 1 %></h2>
+      <p>
+        <strong>Route:</strong><%= nearest_station.route %>
+      </p>
+      <p>
+        <strong>Station:</strong><%= nearest_station.station %>
+      </p>
+      <p>
+        <strong>Time:</strong><%= nearest_station.time %>
+      </p>
+  <% end %>
+</div>
+
+<%= link_to 'edit', edit_property_path %> |
+<%= link_to 'back', properties_path %>

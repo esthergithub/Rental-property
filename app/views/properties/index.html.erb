@@ -1,0 +1,28 @@
+<h1>Property list</h1>
+<p><%= notice %></p>
+<table>
+  <tr>
+    <th>Property Name</th>
+    <th>Rent</th>
+    <th>Address</th>
+    <th>Year</th>
+    <th>Remarks</th>
+　</tr>
+
+<% @properties.each do |property| %>
+  <tr>
+    <td><%= property.name %></td>
+    <td><%= property.rent.to_s(:delimited) %></td>
+    <td><%= property.address %></td>
+    <td><%= property.year %></td>
+    <td><%= property.memo %></td>
+    <td><%= link_to "show", property_path(property.id) %></td>
+    <td><%= link_to "edit", edit_property_path(property.id), data: { confirm: '本当に編集していいですか？' } %></td>
+    <td><%= link_to "delete", property_path(property.id), method: :delete, data: { confirm: '本当に削除していいですか？' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br>
+
+<%= link_to 'Create new', new_property_path %>
