@@ -5,11 +5,11 @@
   <%= form.hidden_field :address %>
   <%= form.hidden_field :year %>
   <%= form.hidden_field :memo %>
-  <p>タイトル:<%= @property.name %></p>
-  <p>本文:<%= @property.rent %></p>
-  <p>本文:<%= @property.address %></p>
-  <p>本文:<%= @property.year %></p>
-  <p>本文:<%= @property.memo %></p>
+  <p>name:<%= @property.name %></p>
+  <p>rent:<%= @property.rent %></p>
+  <p>address:<%= @property.address %></p>
+  <p>year:<%= @property.year %></p>
+  <p>remarks:<%= @property.memo %></p>
   <%= form.submit  "confirm" %>
   <%= form.submit "back", name: 'back' %>
 <% end %>
