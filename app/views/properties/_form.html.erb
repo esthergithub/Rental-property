@@ -23,7 +23,7 @@
     <%= form.text_area :memo %><br>
   </div>
 <hr>
-  <div class="station_form">
+  <div class="station">
     <% n = 0 %>
     <%= form.fields_for :nearest_stations do |near| %>
       <h2>Nearest Station<%= n += 1 %></h2>
@@ -37,4 +37,4 @@
   </div>
 　<%= form.submit %>
 <% end %>
-<%= link_to "Back", properties_path %>
+<%= link_to "back", properties_path %>
