@@ -10,7 +10,7 @@
 　</div>
 <% end %>
 
-  <div class="property_form">
+  <div class="property">
     <%= form.label :name %><br>
     <%= form.text_field :name %><br>
     <%= form.label :rent %><br>
@@ -22,7 +22,7 @@
     <%= form.label :remarks %><br>
     <%= form.text_area :memo %><br>
   </div>
-
+<hr>
   <div class="station_form">
     <% n = 0 %>
     <%= form.fields_for :nearest_stations do |near| %>

@@ -4,8 +4,8 @@
 <p>Adress: <%= @property.address %></p>
 <p>Year: <%= @property.year %></p>
 <p>Remarks: <%= @property.memo %></p>
-
-<div class="station_form">
+<hr> 
+<div class="station">
   <% n = 0 %>
   <% @property.nearest_stations.each do |nearest_station| %>
     <h2>Nearest Station<%= n += 1 %></h2>
